@@ -1,5 +1,5 @@
 """
-    saraki.erros
+    stranal_app.erros
     ~~~~~~~~~~~~
 """
 from flask import jsonify

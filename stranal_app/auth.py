@@ -1,5 +1,5 @@
 """
-    saraki.auth
+    stranal_app.auth
     ~~~~~~~~~~~
 """
 
@@ -51,13 +51,13 @@ HTTP_VERBS_CRUD = {
 
 #: A local proxy object that points to the user accessing an endpoint in the
 #: current request. The value of this object is an instance of the model class
-#: :class:`~saraki.model.User` or None if there is not a user.
+#: :class:`~stranal_app.model.User` or None if there is not a user.
 current_user = LocalProxy(lambda: getattr(_request_ctx_stack.top, "current_user", None))
 
 
 #: A local proxy object that points to the organization being accessed in the
 #: current request. The value of this object is an instance of the model class
-#: :class:`~saraki.model.Org` or None if the endpoint is not a tenant endpoint.
+#: :class:`~stranal_app.model.Org` or None if the endpoint is not a tenant endpoint.
 current_org = LocalProxy(lambda: getattr(_request_ctx_stack.top, "current_org", None))
 
 
@@ -470,7 +470,7 @@ def require_auth(resource=None, action=None, parent_resource=None):
         {"parent": ["action"]}
 
     Whenever a request with an unauthorized access token reaches a locked view
-    function an :class:`~saraki.exc.AuthorizationError` exception is raised.
+    function an :class:`~stranal_app.exc.AuthorizationError` exception is raised.
 
     :param resource: The name of the resource
     :param action: The action that can be performed on the resource.

@@ -201,7 +201,7 @@ class Action(Model, ModelMixin):
     """Actions performed across the application like manage, create, read,
     update, delete, follow, etc.
 
-    This table stores all actions registered using :func:`~saraki.auth.require_auth`.
+    This table stores all actions registered using :func:`~stranal_app.auth.require_auth`.
     """
 
     __tablename__ = "action"

@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint as _Blueprint, has_app_context
 from flask_sqlalchemy import SQLAlchemy
-from saraki import errors
+from stranal_app import errors
 from stranal_app.config import Config
 from stranal_app.model import database
 from stranal_app.auth import Auth
@@ -39,12 +39,12 @@ class SApp(Flask):
                     persist_data()
 
     def add_default_blueprints(self):
-        from saraki.api import appbp
+        from stranal_app.api import appbp
 
         self.register_blueprint(appbp)
 
     def add_default_endpoints(self):
-        from saraki.api import signup_view
+        from stranal_app.api import signup_view
 
         self.add_url_rule("/signup", "signup", signup_view, methods=["POST"])
 

@@ -464,9 +464,9 @@ def add_resource(
         /products
         /products/<int:id>
 
-    By default, all endpoints are secured with :func:`~saraki.require_auth`.
+    By default, all endpoints are secured with :func:`~stranal_app.require_auth`.
     Once again, the table name is used for the resource parameter of
-    :func:`~saraki.require_auth`, unless the ``resource_name`` parameter is provided.
+    :func:`~stranal_app.require_auth`, unless the ``resource_name`` parameter is provided.
 
     To disable this behavior pass ``secure=False``.
 
@@ -481,7 +481,7 @@ def add_resource(
     .. admonition:: Notice
 
        If you pass ``secure=False`` and an organization model class,
-       :data:`~saraki.current_org` and :data:`~saraki.current_user` won't be
+       :data:`~stranal_app.current_org` and :data:`~stranal_app.current_user` won't be
        available and the generated view functions will break.
 
 
